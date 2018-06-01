@@ -6,7 +6,7 @@ import java.util.List;
 
 public class AI {
 	int ROWS = TicTacToe.ROWS;
-	int COLS  = TicTacToe.COLS;
+	int COLS = TicTacToe.COLS;
 
 	Token[][] board;
 	Token token;
@@ -54,7 +54,6 @@ public class AI {
 	 * @return integer array {score, x, y}
 	 */
 	int[] alphabeta(int depth, Token player, int alpha, int beta) {
-		// TODO Auto-generated method stub
 		List<int[]>children;
 		int score;
 		int row=-1;
@@ -212,10 +211,11 @@ public class AI {
 		 * check 3 consecutive cells
 		 */
 		if (this.board[row3][col3] == this.token) {
-// 			if (score == 1) {
-// 				score = 10;
-// 			} else if (score == 10) {
-// 				score = 100;
+ 			if (score == 1) {
+ 				score = 10;
+ 			} else if (score == 10) {
+ 				score = 100;
+ 			}
 			if(score > 0) {
 				score *= 10;
 			} else if (score < 0) {
@@ -224,10 +224,11 @@ public class AI {
 				score = 1;
 			}
 		} else if (this.board[row3][col3] == oppToken) {
-			/*if (score == -1) {
+			if (score == -1) {
 				score = -10;
 			} else if (score == -10) {
-			*/	score = -100;
+				score = -100;
+			}
 			if(score < 0) {
 				score *= 10;
 			} else if (score > 1) {
